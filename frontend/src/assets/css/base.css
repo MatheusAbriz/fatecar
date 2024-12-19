@@ -1,0 +1,16 @@
+:root {
+  --cor-fundo-escuro: #1E294D; 
+  --cor-fundo-claro: #3158C4;
+  --tamanho-titulo: 42px;
+  --tamanho-texto: 18px;
+  --cor-texto: #F9F9F9;
+  --border-radius: 30px;
+  --espacamento-padrao: 0 3rem;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}

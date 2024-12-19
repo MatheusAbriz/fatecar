@@ -1,0 +1,32 @@
+body{
+    background-color: #1E1E1E;
+}
+
+/*secao objetivo*/
+#objetivo, #agradecimentos{
+    padding: 2rem 4rem;
+}
+
+.titulo-objetivo, .titulo-agradecimentos{
+    font-size: clamp(20px + 1.5vw, 0.3043rem + 2.8vw, 42px);
+    text-align: center;
+}
+
+.texto-objetivo, .texto-agradecimentos{
+    font-size: clamp(15px, 0.1rem + 1.5vw , 18px);
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.container-pdf{
+    border: 3px solid #F9F9F9;
+    border-radius: 20px;
+    height: 800px;
+    width: 60%;
+    margin: 1.5rem auto 0 auto;
+}
+
+.container-pdf embed{
+    border-radius: 20px;
+}
+

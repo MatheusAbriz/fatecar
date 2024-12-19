@@ -1,0 +1,316 @@
+body{
+    background-color: #212121;
+}
+
+#form{
+    background-color: #1E1E1E;
+    padding: 2rem 0 2rem 0;
+}
+
+.container-content{
+    padding: 2rem;
+}
+
+.container-conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+/*Formulário*/
+.titulo-form{
+    font-size: clamp(20px + 1.5vw, 0.3043rem + 2.8vw, 42px);
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.container-botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#form .container-form, .container-form-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+/*Animacao de fade-in(aparecer) do formulario*/
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateX(-300px);
+    }50%{
+        opacity: 0.2;
+    }75%{
+        opacity: 0.5;
+    }100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*Animacao de fade-off(sumir) do formulario*/
+@keyframes fade-off {
+    0%{
+        transform: translateX(0);
+    }50%{
+        opacity: 0.5;
+    }100%{
+        transform: translateX(300px);
+    }
+}
+
+.container-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/*Botão Navegável*/
+.botao-passageiro{
+    font-size: var(--tamanho-texto);
+    text-decoration: none;
+}
+
+.botao-passageiro:first-child{
+    margin-right: .8rem;
+}
+
+.botao-passageiro:hover{
+    text-decoration: underline;
+}
+
+
+.container-form input, .container-form select, .container-form select option, .container-form-login input{
+    width: 100%;
+    max-width: 470px;
+    height: 35px;
+    border-radius: 10px;
+    color: #1E1E1E;
+    padding: .8rem;
+    font-size: clamp(10px, 2vw, 13px);
+}
+
+.container-info input, .container-info select{
+    margin-bottom: .8rem;
+    background-color: #D9D9D9;
+}
+
+.nova-senha{
+    content: '';
+    background-image: url('../img/senha-escondida.svg');
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 196px;
+    right: 8px;
+}
+
+.senha-login{
+    content: '';
+    background-image: url('../img/senha-escondida.svg');
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 117px;
+    right: 8px;
+}
+
+.nova-senha:hover, .senha-login:hover{
+    cursor: pointer;
+}
+
+
+.container-info select{
+    appearance: none;
+}
+
+.container-form label, .container-info label{
+    font-size: var(--tamanho-texto);
+    margin-bottom: .5rem;
+}
+
+
+.container-form button, .container-form-login button{
+    color: var(--cor-texto);
+    font-size: var(--tamanho-texto);
+    border: var(--borda-div);
+    border-radius: 40px;
+    padding: 12px 18px;
+    transition: all ease-in-out 250ms;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: .8rem;
+}
+
+.container-botao button{
+    color: #000;
+    font-size: clamp(20px, 2vw, 18px);
+    border: var(--borda-div);
+    border-radius: 40px;
+    padding: 15px 20px;
+    position: relative;
+    transition: width, color ease-in-out 500ms;
+    text-decoration: none;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.container-botao button:hover{
+    cursor: pointer;
+    border-color: #D20909;
+    color: #FFF;
+}
+
+.span-botao{
+    transition: width 500ms;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.span-botao::before{
+    background-color: #000;
+    content: '';
+    width: 0;
+    display: block;
+    height: 52px;
+    position: absolute;
+    border-radius: 30px;
+    transition: width 500ms;
+    transform: translateX(0) skew(-10deg);
+    z-index: -1;
+    top: 12px;
+}
+
+.span-botao:hover::before{
+    width: 98%;
+}
+
+.container-form select{
+    padding: unset;
+    padding-left: .8rem;
+}
+
+/*Formuláro de login*/
+.container-form-login{
+    display: none;
+    transform: translateX(-300px);
+}
+
+/*Vantagens*/
+#vantagens{
+    background-color: #212121;
+    padding: 3.5rem 2rem;
+}
+
+.container-vantagens{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.container-vantagens, .container-teste{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-teste{
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 0 auto;
+}
+
+.titulo-vantagens{
+    text-align: center;
+    font-size: 36px;
+}
+
+.texto-vantagens{
+    width: 300px;
+    font-size: clamp(13px, 2vw, 16px);
+    text-align: center;
+}
+
+.vantagens-img{
+    width: 100%;
+    max-width: 180px;
+}
+
+/*Roadmap Motorista*/
+#roadmap-motorista{
+    background-color: #1E1E1E;
+    padding: 3.5rem 2rem;
+}
+
+.titulo-roadmap{
+    font-size: 36px;
+    text-align: center;
+}
+
+.container-roadmap{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.linha-roadmap{
+    height: 200px;
+    width: 3px;
+    background-color: #D20909;
+    margin-left: 8%;
+}
+
+.container-texto-roadmap{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-left: 1.5rem;
+}
+
+.texto-roadmap{
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+.texto-roadmap::before{
+    content: '•';
+    font-size: 20px;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+/*Responsividade*/
+@media screen and (max-width: 1300px){
+    #vantagens{
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .container-vantagens{
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .container-form{
+        flex-direction: column;
+    }
+
+    .container-form input, .container-form select, .container-form select option, .container-form-login input{
+        width: 70vw;
+        height: 38px;
+    }
+}

@@ -1,0 +1,234 @@
+*{
+    color: unset;
+}
+
+/*SECAO MAPA*/
+#mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2rem 4rem;
+    background-color: #1E1E1E;
+}
+
+#ruaOrigem, #ruaDestino{
+    color: #000;
+}
+
+.titulo-mapa, #msg{
+    color: #F9F9F9;
+}
+
+.span-botao button{
+    color: #FFF;
+    font-size: clamp(20px, 2vw, 18px);
+    border: var(--borda-div);
+    border-radius: 40px;
+    padding: 15px 20px;
+    position: relative;
+    transition: width ease-in-out 500ms;
+    text-decoration: none;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.span-botao button:hover{
+    cursor: pointer;
+    border-color: #D20909;
+}
+
+.span-botao{
+    transition: width 500ms;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.span-botao::before{
+    background-color: #000;
+    content: '';
+    width: 0;
+    display: block;
+    height: 60px;
+    position: absolute;
+    border-radius: 30px;
+    transition: width 500ms;
+    transform: translateX(0) skew(-10deg);
+}
+
+.span-botao:hover::before{
+    width: 100%;
+}
+
+.input-cadastro{
+    background-color: #C2C2C2;
+    border-radius: 10px;
+    height: 40px;
+    padding: .6rem;
+    width: 100%;
+}
+
+.input-cadastro::placeholder{
+    color: #2F2E2E;
+}
+
+/*POPUP Solicitar corrida*/
+#solicitar-corrida, #carregando-corrida, #comecar-corrida, #mapa-motorista, #acompanhar-corrida{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#solicitar-corrida{
+    height: 450px;
+}
+
+#solicitar-corrida, #carregando-corrida, #comecar-corrida{
+    display: none;
+    opacity: 0;
+    padding: 1.5rem;
+    background-color: #FFF;
+    transition: all ease-in-out 500ms;
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    align-items: start;
+    justify-content: start;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+#comecar-corrida{
+    height: 200px;
+}
+
+#mapa-motorista, #acompanhar-corrida{
+    display: flex;
+    opacity: 0;
+    z-index: -99;
+    padding: 1.5rem;
+    background-color: #FFF;
+    transition: all ease-in-out 500ms;
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    align-items: start;
+    justify-content: start;
+    border-radius: 15px;
+    flex-direction: column;
+    height: 600px;
+}
+
+#mapa-motorista{
+    align-items: center;
+}
+
+#comecar-corrida, #acompanhar-corrida{
+    justify-content: center;
+    align-items: center;
+    row-gap: .8rem;
+}
+
+.leaflet-routing-container{
+    display: none !important;
+}
+
+.titulo-motorista{
+    font-size: 34px;
+    color: #000;
+}
+
+#carregando-corrida{
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    row-gap: .8rem;
+}
+
+.container-preco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: .8rem;
+}
+
+.botao-aceitar{
+    color: #000 !important;
+    transition: width, color ease-in-out 500ms !important;
+}
+
+.botao-aceitar:hover{
+    color: #FFF !important;
+}
+
+.carregando{
+    border: 16px solid #C2C2C2;
+    border-top: 16px solid #3498DB;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: giro 2s linear infinite;
+}
+
+@keyframes giro{
+    0%{
+        transform: rotate(0);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+
+.fechar-modal{
+    align-self: end;
+}
+
+.fechar-modal:hover{
+    cursor: pointer;
+}
+
+.container-info-motorista{
+    border-radius: 15px;
+    margin-top: .8rem;
+    border: 2px solid #d1d5db;
+    -webkit-box-shadow: 0 0 2px #D1D5DB;
+    box-shadow: 0 0 10px #CCC;
+    padding: 1.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.corrida-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 45px;
+}
+
+.img-motorista{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.nome-motorista, .carro-motorista, .tempo-corrida{
+    border-right: 1px solid #C2C2C2;
+    padding: 0 .8rem 0 .8rem;
+    text-align: center;
+}
+
+.distancia-corrida{
+    padding-left: .8rem;
+}
+
+.cronometro-corrida{
+    color: #000;
+}
